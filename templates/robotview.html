@@ -1,0 +1,27 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-4">
+			<div id = "robot-information" ng-show="IsConnected">
+				<h3 id = "robot-name">{{robotName}}</h3>
+				ID: <div id = "robot-peer-id"></div>
+				<button id="robot-disconnect" type="button" class="btn btn-sm btn-primary">Disconnect</button>
+			</div>
+
+		</div>
+		<div class="col-sm-4">
+			<video id="robot-video" autoplay></video>
+			<video id="user-video" muted="true" autoplay></video>
+		</div>
+		<div class="col-sm-4">
+			<ul id="listMessages" class="list-group">
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+				<label for="iMsg">Message</label>
+				<textarea class="form-control" id="iMsg" rows="3"></textarea>
+				<div id = "iSend" type="button" class="btn btn-primary">Send</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+	<script src = "http://cdn.peerjs.com/0.3.14/peer.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body ng-app = "RobotClientApp">
+
+	<h1>Web Robot Client</h1>
+	<div ng-view></div>
+
+	<!-- Application -->
+	<script src="js/app.js"></script>
+
+	<script src="js/services/roboserverAPI-service.js"></script>
+	<script src="js/services/robotinfo-service.js"></script>
+
+	<script src="js/controllers/login-controller.js"></script>
+	<script src="js/controllers/robolist-controller.js"></script>
+	<script src="js/controllers/robotview-controller.js"></script>
+
+	<script src="js/config.js"></script>
+</body>
+</html>

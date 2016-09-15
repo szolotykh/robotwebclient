@@ -1,0 +1,24 @@
+<div>
+  <div class="panel panel-primary center-block" style="width: 320px">
+    <div class="panel-heading">
+      Robots online
+    </div>
+    <div class="panel-body" style="display: block">
+      <button id="update-robolist" type="button" class="btn btn-sm" ng-click="UpdateList()">
+        Update
+      </button>
+      <div id = "robolist" class="list-group" ng-repeat="robot in robolist">
+        <button type="button" class="list-group-item"
+        ng-click="OnSelectRobot($index)"
+        ng-class="{active:robot.selected}">
+          {{robot.name}}
+        </button>
+      </div>
+      <button id="robot-connect" type="button" class="btn btn-sm btn-primary"
+      ng-class="{disabled:selectedRobotIndex == -1}"
+      ng-click="OnConnect()">
+        Connect
+      </button>
+    </div>
+  </div>
+</div>
