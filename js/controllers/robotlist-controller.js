@@ -1,10 +1,11 @@
 angular.module('RobotClientApp')
-.controller('robolistCtrl', ['$scope','$location', 'roboserverAPI', 'robotInfo', 'robots',
-	function($scope, $location, roboserverAPI, robotInfo, robots) {
+.controller('robotlistCtrl',
+	['$scope','$location', 'robotserverAPI', 'robotInfo', 'robots',
+	function($scope, $location, robotserverAPI, robotInfo, robots) {
 
 	$scope.robolist = robots;
 	$scope.UpdateList = function(){
-		roboserverAPI.GetRoboList(function(response){
+		robotserverAPI.GetRobotList(function(response){
 			$scope.robolist = response.data;
 		});
 	}

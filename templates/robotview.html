@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-4">
+		<div class="col-sm-2">
 			<div id = "robot-information" ng-show="IsConnected">
 				<h3 id = "robot-name">{{robotName}}</h3>
 				ID: <div id = "robot-peer-id"></div>
@@ -8,11 +8,15 @@
 			</div>
 
 		</div>
-		<div class="col-sm-4">
-			<video id="robot-video" autoplay></video>
-			<video id="user-video" muted="true" autoplay></video>
+
+		<div class="col-sm-8">
+			<robotcontroller tabindex = "1" connection = "connection">
+				<video id="robot-video" autoplay></video>
+				<video id="user-video" muted="true" autoplay></video>
+			</robotcontroller>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-2">
+			Messages:
 			<ul id="listMessages" class="list-group">
 			</ul>
 		</div>
@@ -20,8 +24,21 @@
 	<div class="row">
 		<div class="col-sm-12">
 				<label for="iMsg">Message</label>
-				<textarea class="form-control" id="iMsg" rows="3"></textarea>
-				<div id = "iSend" type="button" class="btn btn-primary">Send</div>
+				<textarea id="iMsg"
+					class="form-control"
+					rows="3"
+					tabindex = "2"
+					ng-model="messageText"
+					ng-keypress = "onEnter($event)"
+					>
+				</textarea>
+				<div id = "iSend"
+					type="button"
+					class="btn btn-primary"
+					ng-class="{disabled:connection.open && messageText.length == 0}"
+					ng-click = "sendUserMessge()">
+					Send
+				</div>
 		</div>
 	</div>
 </div>

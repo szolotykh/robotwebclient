@@ -1,2 +1,3 @@
 angular.module('RobotClientApp', ["ngRoute"])
-.value('roboserverURL', 'http://localhost:8081');
+.value('roboserverURL', 'http://127.0.0.1:5000')
+.value('ActionPublishIntVar', 500);

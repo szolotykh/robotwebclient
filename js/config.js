@@ -9,13 +9,14 @@ angular.module('RobotClientApp')
         templateUrl : "templates/login.html",
         controller : 'loginCtrl'
     })
-    .when("/robolist", {
-        templateUrl : "templates/robolist.html",
-        controller : 'robolistCtrl',
+    .when("/robotlist", {
+        templateUrl : "templates/robotlist.html",
+        controller : 'robotlistCtrl',
         resolve: {
           'robots': [
-            'roboserverAPI', function(roboserverAPI){
-              return roboserverAPI.GetRoboList(function(response){
+            'robotserverAPI', function(robotserverAPI){
+              return robotserverAPI.GetRobotList(function(response){
+                console.log("GetRobotList");
                 return response.data;
               })
             }
